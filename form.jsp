@@ -16,7 +16,7 @@ if(metodo.equalsIgnoreCase("GET")){
     try{
     //conexion a la base de datos
     Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-Connection con = DriverManager.getConnection(bdconexion);
+    Connection con = DriverManager.getConnection(bdconexion);
     Statement st = con.createStatement();
     //Se revisa si llega el numero de control se hace filtrando este con where sino se consultan toda la tabla
     if((nc = request.getParameter("nc")) != null)
@@ -65,6 +65,7 @@ Connection con = DriverManager.getConnection(bdconexion);
     }
 }else if(metodo.equalsIgnoreCase("PUT")){
     out.print("Metodo actualizar REST");
+
 }else if(metodo.equalsIgnoreCase("DELETE")){
     out.print("Metodo eliminar REST");
 
